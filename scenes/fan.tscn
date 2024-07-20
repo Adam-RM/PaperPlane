@@ -1,19 +1,122 @@
-[gd_scene load_steps=6 format=3 uid="uid://oh1mxjl65jy4"]
+[gd_scene load_steps=21 format=3 uid="uid://oh1mxjl65jy4"]
 
 [ext_resource type="Script" path="res://scripts/Fan/Fan.gd" id="1_3ulxh"]
 [ext_resource type="Texture2D" uid="uid://cnmldublvue1l" path="res://assets/sprites/fan.png" id="2_mrbj2"]
 [ext_resource type="Script" path="res://scripts/Fan/FanCollide.gd" id="3_d5ujo"]
 [ext_resource type="Texture2D" uid="uid://c35ra1gtbeg1o" path="res://assets/sprites/wind_animated.png" id="4_pl40h"]
+[ext_resource type="Texture2D" uid="uid://dtc2i6hw7ncx3" path="res://assets/sprites/fan_animated.png" id="5_0f1k8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ic1rd"]
 radius = 63.65
 height = 740.0
 
-[node name="FAN" type="Node2D" node_paths=PackedStringArray("Wind2DSprite")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlc17"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahmnf"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6bl5"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880g5"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy4co"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(512, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p86nd"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(640, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc034"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(768, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77erh"]
+atlas = ExtResource("4_pl40h")
+region = Rect2(896, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxmpr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlc17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahmnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6bl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy4co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p86nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc034")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77erh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p5gh"]
+atlas = ExtResource("5_0f1k8")
+region = Rect2(0, 0, 384, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8sku"]
+atlas = ExtResource("5_0f1k8")
+region = Rect2(384, 0, 384, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njsfn"]
+atlas = ExtResource("5_0f1k8")
+region = Rect2(768, 0, 384, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktbk3"]
+atlas = ExtResource("5_0f1k8")
+region = Rect2(1152, 0, 384, 222)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wb37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p5gh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8sku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njsfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktbk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="FAN" type="Node2D" node_paths=PackedStringArray("Wind2DSprite", "Fan2DSprite")]
 script = ExtResource("1_3ulxh")
 Wind2DSprite = NodePath("Wind2DSprite")
+Fan2DSprite = NodePath("Fan2DSprite")
 
-[node name="Fan2DSprite" type="Sprite2D" parent="."]
+[node name="Fan2DSpriteOLD" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.345, 0.345)
 texture = ExtResource("2_mrbj2")
 
@@ -26,11 +129,24 @@ metadata/FanManager = NodePath("..")
 position = Vector2(-1.045, -311.905)
 shape = SubResource("CapsuleShape2D_ic1rd")
 
-[node name="Wind2DSprite" type="Sprite2D" parent="."]
+[node name="Wind2DSpriteOLD" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-1.5, -298.5)
 scale = Vector2(0.116211, 2.97266)
 texture = ExtResource("4_pl40h")
+
+[node name="Wind2DSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1, -333)
+scale = Vector2(1.51562, 2.98535)
+sprite_frames = SubResource("SpriteFrames_lxmpr")
+autoplay = "default"
+
+[node name="Fan2DSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 34)
+scale = Vector2(0.39, 0.39)
+sprite_frames = SubResource("SpriteFrames_1wb37")
+autoplay = "default"
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
