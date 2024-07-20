@@ -13,11 +13,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed_accel = 0.03
 
 var plane_sprite: Sprite2D
+var plane_crash_texture: Texture
 
 func _ready():
 	plane_sprite = $Plane
 	velocity = INIT_VELOCITY
 	gravity = INIT_GRAVITY
+	plane_crash_texture = load("res://assets/sprites/crashed_plane.png")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -34,6 +36,11 @@ func _physics_process(delta):
 		plane_sprite.scale.y *= -1
 		
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		print("I collided with ", collision.get_collider().name)
+		velocity = Vector2(2, 0)
+		plane_sprite.texture = plane_crash_texture
 	
 func update_rotation():
 	# Vérifier que la vélocité n'est pas zéro pour éviter une division par zéro
