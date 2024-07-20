@@ -6,6 +6,7 @@
 [node name="FAN_TEST_LEVEL" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.805, 0.805)
 
 [node name="PaperPlane" parent="." instance=ExtResource("1_xquri")]
 position = Vector2(-333, -5)
