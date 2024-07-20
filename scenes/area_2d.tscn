@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch0w6yr8l3dxw"]
+
+[ext_resource type="Script" path="res://scripts/area_2d.gd" id="1_cfqtb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ttg1u"]
+radius = 213.12
+
+[sub_resource type="GDScript" id="GDScript_q35ht"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_cfqtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ttg1u")
+script = SubResource("GDScript_q35ht")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
