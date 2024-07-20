@@ -11,4 +11,5 @@
 position = Vector2(-362, -216)
 
 [node name="FAN" parent="." instance=ExtResource("2_sitgx")]
-position = Vector2(25, 299)
+position = Vector2(386, 122)
+rotation = -1.13928
