@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cydfpuc30ke7j" path="res://scenes/paper_plane.tscn" id="1_dbdl2"]
 [ext_resource type="PackedScene" uid="uid://oh1mxjl65jy4" path="res://scenes/fan.tscn" id="2_sitgx"]
 [ext_resource type="Texture2D" uid="uid://2cpcm8dlnbqw" path="res://assets/sprites/background.png" id="3_me7rm"]
-[ext_resource type="PackedScene" path="res://scenes/letter_box.tscn" id="3_omjys"]
-[ext_resource type="Texture2D" uid="uid://8x44jql2xqor" path="res://assets/sprites/poto.png" id="4_fg8yy"]
-[ext_resource type="PackedScene" uid="uid://dmxe5k0hepuka" path="res://scenes/wall.tscn" id="6_agl16"]
+[ext_resource type="PackedScene" uid="uid://3sdlb76m7npu" path="res://scenes/letter_box.tscn" id="3_omjys"]
+[ext_resource type="Texture2D" uid="uid://d2oxbnlr212wi" path="res://assets/sprites/poto.png" id="4_fg8yy"]
+[ext_resource type="PackedScene" path="res://scenes/wall.tscn" id="6_agl16"]
 
 [node name="main" type="Node2D"]
 
