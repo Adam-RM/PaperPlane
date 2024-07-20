@@ -19,9 +19,6 @@ func _process(delta):
 		if (fan._get_status() == true):
 		#	direction = Vector2(-cos(get_parent().rotation), sin(get_parent().rotation)).normalized()
 			direction = Vector2(sin(get_parent().rotation), -cos(get_parent().rotation)).normalized()
-			print(direction)
-			print("FIOOUUUUU")
-			print(direction * strength * delta)
 			player_body.add_force(direction * strength * delta)
 			
 
@@ -31,5 +28,7 @@ func _on_body_entered(body):
 		PlayerOnPath = true
 
 func _on_body_exited(body):
+	print("exited")
 	if body is PaperPlane:
+		print("it's all good")
 		PlayerOnPath = false

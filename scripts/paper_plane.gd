@@ -17,7 +17,6 @@ func _ready():
 	gravity = INIT_GRAVITY
 
 func _physics_process(delta):
-	print("velocity :", velocity)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -43,9 +42,4 @@ func rotation_to_speed_ratio() -> float:
 
 func add_force(force: Vector2):
 	var global_force = global_transform.basis_xform(force)
-	print(force, ", ", global_force)
 	velocity += force
-
-func print_name():
-	print("patates")
-	print(self.name)

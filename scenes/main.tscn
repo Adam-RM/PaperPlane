@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkvdnxijsm3mt"]
 
 [ext_resource type="PackedScene" uid="uid://cydfpuc30ke7j" path="res://scenes/paper_plane.tscn" id="1_dbdl2"]
-[ext_resource type="PackedScene" path="res://scenes/fan.tscn" id="2_sitgx"]
+[ext_resource type="PackedScene" uid="uid://oh1mxjl65jy4" path="res://scenes/fan.tscn" id="2_sitgx"]
 
 [node name="main" type="Node2D"]
 
