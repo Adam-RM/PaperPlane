@@ -1,18 +1,21 @@
 extends CharacterBody2D
 
-
-
 class_name PaperPlane
+
 
 const SPEED = 300.0
 const INIT_VELOCITY = Vector2(300, 0)
 const INIT_GRAVITY = 100
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed_accel = 0.03
 
+var plane_sprite: Sprite2D
+
 func _ready():
+	plane_sprite = $Plane
 	velocity = INIT_VELOCITY
 	gravity = INIT_GRAVITY
 
@@ -23,6 +26,13 @@ func _physics_process(delta):
 	update_rotation()
 	var speed_ratio = rotation_to_speed_ratio()
 	velocity += velocity * speed_ratio
+	if (velocity.x < 0 && plane_sprite.scale.y > 0):
+		print("gauche")
+		plane_sprite.scale.y *= -1
+	elif (velocity.x > 0 && plane_sprite.scale.y < 0):
+		print("droit")
+		plane_sprite.scale.y *= -1
+		
 	move_and_slide()
 	
 func update_rotation():
