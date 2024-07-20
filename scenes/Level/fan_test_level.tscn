@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b06ywixlltm5b"]
+
+[ext_resource type="PackedScene" uid="uid://cp0c225ho1vqn" path="res://scenes/fan.tscn" id="1_1uy1o"]
+[ext_resource type="Script" path="res://scripts/Fan/TestMovment.gd" id="2_a283h"]
+[ext_resource type="Texture2D" uid="uid://cwgmvgrxe01pa" path="res://assets/sprites/plane.png" id="3_r5utb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klilm"]
+size = Vector2(544.682, 178.723)
+
+[node name="FAN_TEST_LEVEL" type="Node2D"]
+
+[node name="FAN" parent="." instance=ExtResource("1_1uy1o")]
+position = Vector2(2, 253)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-500, 0)
+scale = Vector2(0.235, 0.235)
+script = ExtResource("2_a283h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("3_r5utb")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(-4.25488, -8.51063)
+shape = SubResource("RectangleShape2D_klilm")
