@@ -12,4 +12,4 @@ zoom = Vector2(0.805, 0.805)
 position = Vector2(-333, -5)
 
 [node name="FAN" parent="." instance=ExtResource("1_1uy1o")]
-position = Vector2(-3, 304)
+position = Vector2(-4, 307)
