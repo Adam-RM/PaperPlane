@@ -15,6 +15,10 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+SceneSwitcher="*res://scripts/scene_switcher.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray()
