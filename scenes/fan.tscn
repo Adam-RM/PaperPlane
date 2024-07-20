@@ -9,8 +9,9 @@
 radius = 63.65
 height = 740.0
 
-[node name="FAN" type="Node2D"]
+[node name="FAN" type="Node2D" node_paths=PackedStringArray("Wind2DSprite")]
 script = ExtResource("1_3ulxh")
+Wind2DSprite = NodePath("Wind2DSprite")
 
 [node name="Fan2DSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.345, 0.345)
