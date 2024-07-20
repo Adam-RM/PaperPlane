@@ -5,11 +5,12 @@ extends CharacterBody2D
 class_name PaperPlane
 
 const SPEED = 300.0
-const INIT_VELOCITY = Vector2(400, 0)
+const INIT_VELOCITY = Vector2(300, 0)
 const INIT_GRAVITY = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var speed_accel = 0.03
 
 func _ready():
 	velocity = INIT_VELOCITY
@@ -20,6 +21,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	update_rotation()
+	var speed_ratio = rotation_to_speed_ratio()
+	velocity += velocity * speed_ratio
 	move_and_slide()
 	
 func update_rotation():
@@ -30,10 +33,13 @@ func update_rotation():
 		
 		# Appliquer l'angle au sprite
 		rotation = angle
-		
-		# Facultatif : afficher l'angle pour le débogage
-		print("Angle de rotation : ", rad_to_deg(angle), " degrés")
 
-func print_name():
-	print("patates")
-	print(self.name)
+# Fonction pour convertir une rotation en ratio de vitesse
+func rotation_to_speed_ratio() -> float:
+	var angle = velocity.angle()
+	var ratio = sin(angle) * speed_accel
+	return ratio
+
+func add_force(force: Vector2):
+	var global_force = global_transform.basis_xform(force)
+	velocity += force

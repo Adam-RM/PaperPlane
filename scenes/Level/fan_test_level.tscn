@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b06ywixlltm5b"]
+
+[ext_resource type="PackedScene" uid="uid://oh1mxjl65jy4" path="res://scenes/fan.tscn" id="1_1uy1o"]
+[ext_resource type="PackedScene" uid="uid://cydfpuc30ke7j" path="res://scenes/paper_plane.tscn" id="1_xquri"]
+
+[node name="FAN_TEST_LEVEL" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PaperPlane" parent="." instance=ExtResource("1_xquri")]
+position = Vector2(-333, -5)
+
+[node name="FAN" parent="." instance=ExtResource("1_1uy1o")]
+position = Vector2(-3, 304)
