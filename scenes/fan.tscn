@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c35ra1gtbeg1o" path="res://assets/sprites/wind_animated.png" id="4_pl40h"]
 [ext_resource type="Texture2D" uid="uid://dtc2i6hw7ncx3" path="res://assets/sprites/fan_animated.png" id="5_0f1k8"]
 [ext_resource type="Script" path="res://scenes/KeyCap.gd" id="6_b74ma"]
-[ext_resource type="Texture2D" uid="uid://cnr7thhifhxet" path="res://assets/sprites/keycap_dark.png" id="7_oxrf1"]
+[ext_resource type="Texture2D" uid="uid://cwfk4daeyp5ff" path="res://assets/sprites/keycap_dark.png" id="7_oxrf1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ic1rd"]
 radius = 63.65
@@ -156,7 +156,7 @@ sprite_frames = SubResource("SpriteFrames_1wb37")
 autoplay = "default"
 
 [node name="KeyCap" type="Node2D" parent="." node_paths=PackedStringArray("KeyCase2DSprite", "text")]
-position = Vector2(300, 0)
+position = Vector2(164, 0)
 script = ExtResource("6_b74ma")
 KeyUsed = SubResource("InputEventKey_m4xa1")
 KeyCase2DSprite = NodePath("Sprite2D")

@@ -1,20 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkvdnxijsm3mt"]
+[gd_scene load_steps=7 format=3 uid="uid://bkvdnxijsm3mt"]
 
 [ext_resource type="PackedScene" uid="uid://cydfpuc30ke7j" path="res://scenes/paper_plane.tscn" id="1_dbdl2"]
 [ext_resource type="PackedScene" uid="uid://oh1mxjl65jy4" path="res://scenes/fan.tscn" id="2_sitgx"]
-[ext_resource type="PackedScene" uid="uid://3sdlb76m7npu" path="res://scenes/letter_box.tscn" id="3_omjys"]
+[ext_resource type="Texture2D" uid="uid://2cpcm8dlnbqw" path="res://assets/sprites/background.png" id="3_me7rm"]
+[ext_resource type="PackedScene" path="res://scenes/letter_box.tscn" id="3_omjys"]
+[ext_resource type="Texture2D" uid="uid://8x44jql2xqor" path="res://assets/sprites/poto.png" id="4_fg8yy"]
+[ext_resource type="PackedScene" uid="uid://dmxe5k0hepuka" path="res://scenes/wall.tscn" id="6_agl16"]
 
 [node name="main" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-1.00002, -2.99997)
+scale = Vector2(0.592438, 0.573079)
+texture = ExtResource("3_me7rm")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
 
 [node name="PaperPlane" parent="." instance=ExtResource("1_dbdl2")]
-position = Vector2(-362, -216)
+position = Vector2(-757, -365)
 motion_mode = 1
 
 [node name="FAN" parent="." instance=ExtResource("2_sitgx")]
-position = Vector2(-275, 207)
-rotation = 0.66817
+position = Vector2(-242, 325)
+rotation = 0.315346
+
+[node name="Poto" type="Sprite2D" parent="."]
+position = Vector2(743, 426)
+texture = ExtResource("4_fg8yy")
 
 [node name="LetterBox" parent="." instance=ExtResource("3_omjys")]
-position = Vector2(468, -97)
+position = Vector2(746, 198)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("6_agl16")]
+position = Vector2(-51, -372)
+scale = Vector2(0.597375, 0.68)
