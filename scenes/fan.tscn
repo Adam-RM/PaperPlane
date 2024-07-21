@@ -110,10 +110,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="FAN" type="Node2D" node_paths=PackedStringArray("Wind2DSprite", "Fan2DSprite")]
+[node name="FAN" type="Node2D"]
 script = ExtResource("1_3ulxh")
-Wind2DSprite = NodePath("Wind2DSprite")
-Fan2DSprite = NodePath("Fan2DSprite")
 
 [node name="Fan2DSpriteOLD" type="Sprite2D" parent="."]
 visible = false
@@ -136,6 +134,7 @@ scale = Vector2(0.116211, 2.97266)
 texture = ExtResource("4_pl40h")
 
 [node name="Wind2DSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, -333)
 scale = Vector2(1.51562, 2.98535)
@@ -143,6 +142,7 @@ sprite_frames = SubResource("SpriteFrames_lxmpr")
 autoplay = "default"
 
 [node name="Fan2DSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-2, 34)
 scale = Vector2(0.39, 0.39)
 sprite_frames = SubResource("SpriteFrames_1wb37")

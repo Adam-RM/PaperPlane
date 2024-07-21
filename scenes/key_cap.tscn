@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dysx6lkkx08y"]
+
+[ext_resource type="Script" path="res://scenes/KeyCap.gd" id="1_irdpd"]
+[ext_resource type="Texture2D" uid="uid://cwfk4daeyp5ff" path="res://assets/sprites/keycap_dark.png" id="2_hrkdu"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_m4xa1"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1gho"]
+font_size = 28
+
+[node name="KeyCap" type="Node2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_irdpd")
+KeyUsed = SubResource("InputEventKey_m4xa1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_hrkdu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -35.0
+offset_right = 24.0
+offset_bottom = 4.0
+label_settings = SubResource("LabelSettings_j1gho")
+horizontal_alignment = 1
+vertical_alignment = 1
