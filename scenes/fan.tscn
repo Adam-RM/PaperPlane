@@ -1,12 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://oh1mxjl65jy4"]
+[gd_scene load_steps=21 format=3 uid="uid://oh1mxjl65jy4"]
 
 [ext_resource type="Script" path="res://scripts/Fan/Fan.gd" id="1_3ulxh"]
 [ext_resource type="Texture2D" uid="uid://cnmldublvue1l" path="res://assets/sprites/fan.png" id="2_mrbj2"]
 [ext_resource type="Script" path="res://scripts/Fan/FanCollide.gd" id="3_d5ujo"]
 [ext_resource type="Texture2D" uid="uid://c35ra1gtbeg1o" path="res://assets/sprites/wind_animated.png" id="4_pl40h"]
 [ext_resource type="Texture2D" uid="uid://dtc2i6hw7ncx3" path="res://assets/sprites/fan_animated.png" id="5_0f1k8"]
-[ext_resource type="Script" path="res://scenes/KeyCap.gd" id="6_b74ma"]
-[ext_resource type="Texture2D" uid="uid://cwfk4daeyp5ff" path="res://assets/sprites/keycap_dark.png" id="7_oxrf1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ic1rd"]
 radius = 63.65
@@ -112,15 +110,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="InputEventKey" id="InputEventKey_m4xa1"]
-device = -1
-keycode = 67
-unicode = 99
-
-[node name="FAN" type="Node2D" node_paths=PackedStringArray("Wind2DSprite", "Fan2DSprite")]
+[node name="FAN" type="Node2D"]
 script = ExtResource("1_3ulxh")
-Wind2DSprite = NodePath("Wind2DSprite")
-Fan2DSprite = NodePath("Fan2DSprite")
 
 [node name="Fan2DSpriteOLD" type="Sprite2D" parent="."]
 visible = false
@@ -143,6 +134,7 @@ scale = Vector2(0.116211, 2.97266)
 texture = ExtResource("4_pl40h")
 
 [node name="Wind2DSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, -333)
 scale = Vector2(1.51562, 2.98535)
@@ -150,34 +142,14 @@ sprite_frames = SubResource("SpriteFrames_lxmpr")
 autoplay = "default"
 
 [node name="Fan2DSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-2, 34)
 scale = Vector2(0.39, 0.39)
 sprite_frames = SubResource("SpriteFrames_1wb37")
 autoplay = "default"
-
-[node name="KeyCap" type="Node2D" parent="." node_paths=PackedStringArray("KeyCase2DSprite", "text")]
-position = Vector2(164, 0)
-script = ExtResource("6_b74ma")
-KeyUsed = SubResource("InputEventKey_m4xa1")
-KeyCase2DSprite = NodePath("Sprite2D")
-text = NodePath("Label")
-
-[node name="Sprite2D" type="Sprite2D" parent="KeyCap"]
-position = Vector2(9.53674e-06, -3.8147e-06)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_oxrf1")
-
-[node name="Label" type="Label" parent="KeyCap"]
-offset_left = -24.0
-offset_top = -14.0
-offset_right = 23.0
-offset_bottom = 11.0
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="draw" from="Area2D" to="Area2D" method="_on_draw"]
-[connection signal="FanKeyPressedEvent" from="KeyCap" to="." method="_on_key_cap_fan_key_pressed_event"]
