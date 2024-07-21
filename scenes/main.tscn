@@ -1,46 +1,204 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkvdnxijsm3mt"]
+[gd_scene load_steps=15 format=3 uid="uid://bkvdnxijsm3mt"]
 
 [ext_resource type="PackedScene" uid="uid://cydfpuc30ke7j" path="res://scenes/paper_plane.tscn" id="1_dbdl2"]
 [ext_resource type="Texture2D" uid="uid://b271uhehhb2su" path="res://assets/sprites/map_1.png" id="2_kwq4u"]
 [ext_resource type="PackedScene" uid="uid://oh1mxjl65jy4" path="res://scenes/fan.tscn" id="2_sitgx"]
 [ext_resource type="Texture2D" uid="uid://2cpcm8dlnbqw" path="res://assets/sprites/background.png" id="3_me7rm"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://3sdlb76m7npu" path="res://scenes/letter_box.tscn" id="3_omjys"]
 [ext_resource type="Texture2D" uid="uid://d2oxbnlr212wi" path="res://assets/sprites/poto.png" id="4_fg8yy"]
 [ext_resource type="PackedScene" uid="uid://bdmw6vovurfur" path="res://scenes/wall.tscn" id="6_agl16"]
+=======
+[ext_resource type="PackedScene" uid="uid://dkaumb21wgidp" path="res://scenes/letter_box.tscn" id="3_omjys"]
+[ext_resource type="Texture2D" uid="uid://8x44jql2xqor" path="res://assets/sprites/poto.png" id="4_fg8yy"]
+[ext_resource type="PackedScene" uid="uid://dysx6lkkx08y" path="res://scenes/key_cap.tscn" id="5_0yj44"]
+[ext_resource type="PackedScene" uid="uid://dmxe5k0hepuka" path="res://scenes/wall.tscn" id="6_agl16"]
+>>>>>>> b546960f74f9f8716bcb2060dc3897e2d9eae4bc
+
+[sub_resource type="GDScript" id="GDScript_r3f1r"]
+script/source = "extends Node2D
+
+@export var KeyUsed: InputEventKey
+@export var fan: Fan
+var isActivated: bool = false
+var initScale: Vector2 = Vector2.ZERO
+
+signal FanKeyPressedEvent
+
+var sprite = null
+
+func _ready():
+	var label = get_node(\"Label\") as Label
+	label.text = KeyUsed.as_text_keycode()
+	sprite = get_node(\"Sprite2D\") as Sprite2D
+	initScale = sprite.transform.get_scale()
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if (Input.is_key_pressed(KeyUsed.keycode)):
+		if (isActivated == false):
+			fan._fanActivation()
+			isActivated = !isActivated
+			sprite.scale = initScale * 0.9
+	else:
+		if (isActivated == true):
+			fan._fanActivation()
+			isActivated = !isActivated
+			sprite.scale = initScale * 1
+"
+
+[sub_resource type="InputEventKey" id="InputEventKey_fm8v7"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="GDScript" id="GDScript_lvyin"]
+script/source = "extends Node2D
+
+@export var KeyUsed: InputEventKey
+@export var fan: Fan
+var isActivated: bool = false
+var initScale: Vector2 = Vector2.ZERO
+
+signal FanKeyPressedEvent
+
+var sprite = null
+
+func _ready():
+	var label = get_node(\"Label\") as Label
+	label.text = KeyUsed.as_text_keycode()
+	sprite = get_node(\"Sprite2D\") as Sprite2D
+	initScale = sprite.transform.get_scale()
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if (Input.is_key_pressed(KeyUsed.keycode)):
+		if (isActivated == false):
+			fan._fanActivation()
+			isActivated = !isActivated
+			sprite.scale = initScale * 0.9
+	else:
+		if (isActivated == true):
+			fan._fanActivation()
+			isActivated = !isActivated
+			sprite.scale = initScale * 1
+"
+
+[sub_resource type="InputEventKey" id="InputEventKey_vu81s"]
+device = -1
+keycode = 67
+unicode = 99
+
+[sub_resource type="GDScript" id="GDScript_fmgiw"]
+script/source = "extends Node2D
+
+@export var KeyUsed: InputEventKey
+@export var fan: Fan
+var isActivated: bool = false
+var initScale: Vector2 = Vector2.ZERO
+
+signal FanKeyPressedEvent
+
+var sprite = null
+
+func _ready():
+	var label = get_node(\"Label\") as Label
+	label.text = KeyUsed.as_text_keycode()
+	sprite = get_node(\"Sprite2D\") as Sprite2D
+	initScale = sprite.transform.get_scale()
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if (Input.is_key_pressed(KeyUsed.keycode)):
+		if (isActivated == false):
+			fan._fanActivation()
+			isActivated = !isActivated
+			sprite.scale = initScale * 0.9
+	else:
+		if (isActivated == true):
+			fan._fanActivation()
+			isActivated = !isActivated
+			sprite.scale = initScale * 1
+"
+
+[sub_resource type="InputEventKey" id="InputEventKey_1xr33"]
+device = -1
+keycode = 69
+unicode = 101
 
 [node name="main" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-1.00002, -2.99997)
-scale = Vector2(0.592438, 0.573079)
+position = Vector2(21.0002, -4.49993)
+scale = Vector2(0.828304, 0.765454)
 texture = ExtResource("3_me7rm")
 
 [node name="Map1" type="Sprite2D" parent="."]
-position = Vector2(-6, 370)
+position = Vector2(-303, 550)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_kwq4u")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.7, 0.7)
-
-[node name="PaperPlane" parent="." instance=ExtResource("1_dbdl2")]
-position = Vector2(-757, -365)
-motion_mode = 1
-
-[node name="FAN" parent="." instance=ExtResource("2_sitgx")]
-position = Vector2(101, 343)
-rotation = 0.315346
+[node name="Map2" type="Sprite2D" parent="."]
+position = Vector2(1426, 600)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_kwq4u")
 
 [node name="Poto" type="Sprite2D" parent="."]
-position = Vector2(751, 366)
+position = Vector2(-989, 501)
 scale = Vector2(0.561101, 0.702205)
 texture = ExtResource("4_fg8yy")
 
-[node name="LetterBox" parent="." instance=ExtResource("3_omjys")]
-position = Vector2(748, 199)
-scale = Vector2(0.8, 0.8)
+[node name="PaperPlane" parent="." instance=ExtResource("1_dbdl2")]
+position = Vector2(-1046, 47)
+motion_mode = 1
 
+[node name="LetterBox" parent="." instance=ExtResource("3_omjys")]
+position = Vector2(-991, 331)
+scale = Vector2(-1, 1)
+
+<<<<<<< HEAD
 [node name="Wall" parent="." instance=ExtResource("6_agl16")]
 position = Vector2(613, -64)
 scale = Vector2(0.32716, 0.356824)
+=======
+[node name="StaticBody2D" parent="." instance=ExtResource("6_agl16")]
+position = Vector2(26, -571)
+scale = Vector2(0.527159, 0.956824)
+
+[node name="FAN" parent="." instance=ExtResource("2_sitgx")]
+position = Vector2(944, 339)
+rotation = -0.937517
+
+[node name="KeyCap 1" parent="." node_paths=PackedStringArray("fan") instance=ExtResource("5_0yj44")]
+position = Vector2(828, 463)
+script = SubResource("GDScript_r3f1r")
+KeyUsed = SubResource("InputEventKey_fm8v7")
+fan = NodePath("../FAN")
+
+[node name="FAN2" parent="." instance=ExtResource("2_sitgx")]
+position = Vector2(-94, 544)
+rotation = 0.0885281
+
+[node name="KeyCap 2" parent="." node_paths=PackedStringArray("fan") instance=ExtResource("5_0yj44")]
+position = Vector2(-229, 516)
+script = SubResource("GDScript_lvyin")
+KeyUsed = SubResource("InputEventKey_vu81s")
+fan = NodePath("../FAN2")
+
+[node name="FAN3" parent="." instance=ExtResource("2_sitgx")]
+position = Vector2(-149, -565)
+rotation = -2.66035
+
+[node name="KeyCap 3" parent="." node_paths=PackedStringArray("fan") instance=ExtResource("5_0yj44")]
+position = Vector2(-312, -563)
+script = SubResource("GDScript_fmgiw")
+KeyUsed = SubResource("InputEventKey_1xr33")
+fan = NodePath("../FAN3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+>>>>>>> b546960f74f9f8716bcb2060dc3897e2d9eae4bc

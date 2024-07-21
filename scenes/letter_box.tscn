@@ -1,9 +1,40 @@
+<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://3sdlb76m7npu"]
+=======
+[gd_scene load_steps=9 format=3 uid="uid://dkaumb21wgidp"]
+>>>>>>> b546960f74f9f8716bcb2060dc3897e2d9eae4bc
 
 [ext_resource type="Script" path="res://scripts/LetterBox.gd" id="1_tkmjr"]
-[ext_resource type="Texture2D" uid="uid://df0lkqceawyqb" path="res://assets/sprites/box.png" id="2_0ovst"]
-[ext_resource type="Texture2D" uid="uid://l4gxcmq8ixu" path="res://assets/sprites/door.png" id="3_fp6if"]
-[ext_resource type="Texture2D" uid="uid://cattilwrwdmec" path="res://assets/sprites/locker.png" id="4_gfip5"]
+[ext_resource type="Texture2D" uid="uid://pgwwoj0q700b" path="res://assets/sprites/box.png" id="2_0ovst"]
+[ext_resource type="Texture2D" uid="uid://c635av0ctyqoe" path="res://assets/sprites/door.png" id="3_fp6if"]
+[ext_resource type="Texture2D" uid="uid://dfj5egu1enqi2" path="res://assets/sprites/locker.png" id="4_gfip5"]
+
+[sub_resource type="Animation" id="Animation_c5mph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D/Box/Locker:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5597]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody2D/Box/Door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0466571]
+}
 
 [sub_resource type="Animation" id="Animation_y1jli"]
 resource_name = "closing_door"
@@ -45,33 +76,6 @@ tracks/2/keys = {
 "args": [],
 "method": &"isClosed"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_c5mph"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody2D/Box/Locker:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.5597]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatableBody2D/Box/Door:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0466571]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v28kf"]

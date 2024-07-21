@@ -5,7 +5,7 @@ class_name PaperPlane
 
 const SPEED = 300.0
 const INIT_VELOCITY = Vector2(300, 0)
-const INIT_GRAVITY = 100
+const INIT_GRAVITY = 50
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
