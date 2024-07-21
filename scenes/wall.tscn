@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmxe5k0hepuka"]
+[gd_scene load_steps=3 format=3 uid="uid://bdmw6vovurfur"]
 
-[ext_resource type="Texture2D" uid="uid://twwjf2dqc8u0" path="res://assets/sprites/wall.png" id="1_ms03c"]
+[ext_resource type="Texture2D" uid="uid://ctin6o40yc1it" path="res://assets/sprites/wall.png" id="1_ms03c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vrea0"]
 size = Vector2(260, 880)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Wall" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -9)

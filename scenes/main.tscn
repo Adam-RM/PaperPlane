@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bkvdnxijsm3mt"]
 
 [ext_resource type="PackedScene" uid="uid://cydfpuc30ke7j" path="res://scenes/paper_plane.tscn" id="1_dbdl2"]
-[ext_resource type="Texture2D" uid="uid://c3fct78xxq3ds" path="res://assets/sprites/map_1.png" id="2_kwq4u"]
+[ext_resource type="Texture2D" uid="uid://b271uhehhb2su" path="res://assets/sprites/map_1.png" id="2_kwq4u"]
 [ext_resource type="PackedScene" uid="uid://oh1mxjl65jy4" path="res://scenes/fan.tscn" id="2_sitgx"]
 [ext_resource type="Texture2D" uid="uid://2cpcm8dlnbqw" path="res://assets/sprites/background.png" id="3_me7rm"]
-[ext_resource type="PackedScene" uid="uid://dkaumb21wgidp" path="res://scenes/letter_box.tscn" id="3_omjys"]
-[ext_resource type="Texture2D" uid="uid://8x44jql2xqor" path="res://assets/sprites/poto.png" id="4_fg8yy"]
-[ext_resource type="PackedScene" uid="uid://dmxe5k0hepuka" path="res://scenes/wall.tscn" id="6_agl16"]
+[ext_resource type="PackedScene" uid="uid://3sdlb76m7npu" path="res://scenes/letter_box.tscn" id="3_omjys"]
+[ext_resource type="Texture2D" uid="uid://d2oxbnlr212wi" path="res://assets/sprites/poto.png" id="4_fg8yy"]
+[ext_resource type="PackedScene" uid="uid://bdmw6vovurfur" path="res://scenes/wall.tscn" id="6_agl16"]
 
 [node name="main" type="Node2D"]
 
@@ -41,6 +41,6 @@ texture = ExtResource("4_fg8yy")
 position = Vector2(748, 199)
 scale = Vector2(0.8, 0.8)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("6_agl16")]
-position = Vector2(-29, -375)
+[node name="Wall" parent="." instance=ExtResource("6_agl16")]
+position = Vector2(613, -64)
 scale = Vector2(0.32716, 0.356824)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3sdlb76m7npu"]
+[gd_scene load_steps=8 format=3 uid="uid://3sdlb76m7npu"]
 
 [ext_resource type="Script" path="res://scripts/LetterBox.gd" id="1_tkmjr"]
 [ext_resource type="Texture2D" uid="uid://df0lkqceawyqb" path="res://assets/sprites/box.png" id="2_0ovst"]
@@ -80,9 +80,6 @@ _data = {
 "closing_door": SubResource("Animation_y1jli")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nno2"]
-size = Vector2(20, 127)
-
 [node name="LetterBox" type="Node2D"]
 script = ExtResource("1_tkmjr")
 
@@ -113,11 +110,10 @@ libraries = {
 "": SubResource("AnimationLibrary_v28kf")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-118, -77)
+[node name="BoxInside" type="Area2D" parent="."]
+position = Vector2(-1, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(71, -0.5)
-shape = SubResource("RectangleShape2D_7nno2")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoxInside"]
+polygon = PackedVector2Array(-91, 65, -88, 59, 76, 54, 76, -66, 84, -66, 86, 69)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BoxInside" to="." method="_on_area_2d_body_entered"]

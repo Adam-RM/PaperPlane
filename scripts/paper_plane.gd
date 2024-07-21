@@ -38,9 +38,10 @@ func _physics_process(delta):
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		print("I collided with ", collision.get_collider().name)
-		velocity = Vector2(2, 0)
-		plane_sprite.texture = plane_crash_texture
+		if collision.get_collider().name == "Wall":
+			print("I collided with ", collision.get_collider().name)
+			velocity = Vector2(2, 0)
+			plane_sprite.texture = plane_crash_texture
 	
 func update_rotation():
 	# Vérifier que la vélocité n'est pas zéro pour éviter une division par zéro
