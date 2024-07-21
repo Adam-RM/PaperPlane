@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b26a0iq4fc0wf"]
+
+[ext_resource type="Script" path="res://RetryZone.gd" id="1_f6g0v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qb3i4"]
+
+[node name="Retry zone" type="Area2D"]
+script = ExtResource("1_f6g0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qb3i4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
