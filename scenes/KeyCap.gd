@@ -5,8 +5,6 @@ extends Node2D
 var isActivated: bool = false
 var initScale: Vector2 = Vector2.ZERO
 
-signal FanKeyPressedEvent
-
 var sprite = null
 
 func _ready():

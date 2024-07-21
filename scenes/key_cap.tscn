@@ -12,6 +12,7 @@ unicode = 100
 font_size = 28
 
 [node name="KeyCap" type="Node2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_irdpd")
 KeyUsed = SubResource("InputEventKey_m4xa1")
 
