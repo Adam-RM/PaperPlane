@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://3sdlb76m7npu"]
-=======
-[gd_scene load_steps=9 format=3 uid="uid://dkaumb21wgidp"]
->>>>>>> b546960f74f9f8716bcb2060dc3897e2d9eae4bc
 
 [ext_resource type="Script" path="res://scripts/LetterBox.gd" id="1_tkmjr"]
 [ext_resource type="Texture2D" uid="uid://pgwwoj0q700b" path="res://assets/sprites/box.png" id="2_0ovst"]
