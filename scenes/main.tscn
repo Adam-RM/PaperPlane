@@ -118,7 +118,7 @@ func _process(delta):
 			sprite.scale = initScale * 1
 "
 
-[sub_resource type="InputEventKey" id="InputEventKey_1xr33"]
+[sub_resource type="InputEventKey" id="InputEventKey_6bkka"]
 device = -1
 keycode = 69
 unicode = 101
@@ -185,7 +185,7 @@ rotation = -2.66035
 [node name="KeyCap 3" parent="." node_paths=PackedStringArray("fan") instance=ExtResource("5_0yj44")]
 position = Vector2(-312, -563)
 script = SubResource("GDScript_fmgiw")
-KeyUsed = SubResource("InputEventKey_1xr33")
+KeyUsed = SubResource("InputEventKey_6bkka")
 fan = NodePath("../FAN3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
