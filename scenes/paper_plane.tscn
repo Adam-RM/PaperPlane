@@ -3,18 +3,19 @@
 [ext_resource type="Script" path="res://scripts/paper_plane.gd" id="1_ol7r4"]
 [ext_resource type="Texture2D" uid="uid://cwgmvgrxe01pa" path="res://assets/sprites/plane.png" id="2_1jqlj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj0cc"]
-size = Vector2(140, 30)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddbun"]
+height = 130.938
 
 [node name="PaperPlane" type="CharacterBody2D"]
 script = ExtResource("1_ol7r4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(22, 3)
-shape = SubResource("RectangleShape2D_yj0cc")
-metadata/test = 0.0
 
 [node name="Plane" type="Sprite2D" parent="."]
 position = Vector2(21, 1)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_1jqlj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 4)
+rotation = -1.5506
+shape = SubResource("CapsuleShape2D_ddbun")
+metadata/test = 0.0
