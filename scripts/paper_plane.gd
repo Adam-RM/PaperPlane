@@ -40,7 +40,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.get_collider().is_in_group("Wall"):
 			print("I collided with ", collision.get_collider().name)
-			velocity = Vector2(2, 0)
+			velocity = Vector2(0, 0)
 			plane_sprite.texture = plane_crash_texture
 	
 func update_rotation():

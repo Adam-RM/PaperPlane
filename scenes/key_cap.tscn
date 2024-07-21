@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dysx6lkkx08y"]
 
-[ext_resource type="Script" path="res://scenes/KeyCap.gd" id="1_irdpd"]
-[ext_resource type="Texture2D" uid="uid://cwfk4daeyp5ff" path="res://assets/sprites/keycap_dark.png" id="2_hrkdu"]
+[ext_resource type="Script" path="res://scripts/Fan/KeyCap.gd" id="1_irdpd"]
+[ext_resource type="Texture2D" uid="uid://cnr7thhifhxet" path="res://assets/sprites/keycap_dark.png" id="2_hrkdu"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_m4xa1"]
 device = -1

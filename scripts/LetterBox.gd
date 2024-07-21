@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var animation = $AnimationPlayer
+@export var level_name: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +16,7 @@ func closing():
 	
 func isClosed():
 	print("End Level !!")
-	#SceneSwitcher.switch_scene("")
+	SceneSwitcher.switch_scene(level_name)
 
 
 func _on_area_2d_body_entered(body):
